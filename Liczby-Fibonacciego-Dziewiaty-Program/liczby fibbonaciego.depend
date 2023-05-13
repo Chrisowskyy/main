@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1683987948 source:g:\programy\codeblocks\projects\liczby fibbonaciego\main.cpp
+	<iostream>
+	<iomanip>
+
