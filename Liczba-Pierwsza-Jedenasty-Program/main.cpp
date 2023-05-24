@@ -2,15 +2,15 @@
 
 using namespace std;
 
-bool czy_pierwsza(unsigned long long liczba)
+unsigned czy_pierwsza(unsigned long long liczba)
 {
       if(liczba < 2)
-            return false;
+            return 0;
       else
             for(unsigned dzielnik = 2; dzielnik * dzielnik <= liczba; dzielnik++)
                   if(liczba % dzielnik == 0)
-                        return false;
-                  return true;
+                        return dzielnik;
+                  return 1;
 }
 
 int main()
@@ -18,9 +18,12 @@ int main()
       cout << "Podaj liczbe naturalna: ";
       unsigned long long liczba;
       cin >> liczba;
-      if(czy_pierwsza(liczba))
+      unsigned wynik = czy_pierwsza(liczba);
+      if(wynik== 1)
              cout << liczba << " Jest liczba pierwsza.\n";
+      else if (wynik  == 0 )
+            cout << liczba << " Nie jest liczba pierwsza, poniewaz jest mniejsza od 2. \n ";
       else
-            cout << liczba << " Nie jest liczba pierwsza \n ";
+            cout << liczba <<" Nie jest liczba pierwsza, poniewaz dzieli sie przez " << wynik << ".\n";
     return 0;
 }
